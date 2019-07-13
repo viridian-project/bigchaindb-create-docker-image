@@ -135,22 +135,26 @@ $ docker network ls
 
 ### Start the coordinator node
 
-# Start the first instance of BigchainDB (a container). E.g. as a daemon running
-# in background:
-# (https://linuxconfig.org/how-to-start-a-docker-container-as-daemon-process)
-#
-# ```
-# $ docker run --net bigchaindb-network --ip 172.18.0.20 --name bigchaindb-coordinator -p 39984:9984 -d bigchaindb-dev-node /bin/sh -c "while true; do date; sleep 5; done"
-# ```
-#
-# Alternative: use an interactive (-it) session that you never exit:
-#
-# ```
-# $ docker run --net bigchaindb-network --ip 172.18.0.20 --name bigchaindb-coordinator -p 39984:9984 -it bigchaindb-dev-node /bin/bash
-# ```
-#
-# Local port 39984 is bound to the node port 9984 (the default BigchainDB port).
-# You can later reach the BigchainDB HTTP API on that port.
+------------------------------
+
+Didn't work out:
+
+~~Start the first instance of BigchainDB (a container). E.g. as a daemon running in background: (https://linuxconfig.org/how-to-start-a-docker-container-as-daemon-process)~~
+
+```
+$ docker run --net bigchaindb-network --ip 172.18.0.20 --name bigchaindb-coordinator -p 39984:9984 -d bigchaindb-dev-node /bin/sh -c "while true; do date; sleep 5; done"
+```
+
+~~Alternative: use an interactive (-it) session that you never exit:~~
+
+```
+$ docker run --net bigchaindb-network --ip 172.18.0.20 --name bigchaindb-coordinator -p 39984:9984 -it bigchaindb-dev-node /bin/bash
+```
+
+~~Local port 39984 is bound to the node port 9984 (the default BigchainDB port).~~
+~~You can later reach the BigchainDB HTTP API on that port.~~
+
+------------------------------
 
 ```
 $ docker run --net bigchaindb-network --ip 172.18.0.20 --name bigchaindb-coordinator -it bigchaindb-dev-node /bin/bash
