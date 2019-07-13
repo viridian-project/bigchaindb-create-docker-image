@@ -21,13 +21,13 @@ $ docker run -i -t 94e814e2efa8 /bin/bash
   $ apt full-upgrade
 ```
 
-Note: `docker run` creates a new container with new CONTAINER_ID from the image.
+Note: `docker run` creates a new container with new `CONTAINER_ID` from the image.
 Afterwards, you can start and stop the container as you like.
 
 Note: You can exit the container with `exit` (stops the container, can also do
 `docker stop CONTAINER_ID` from outside) and then enter it again with
-`docker start CONTAINER_ID` and `docker attach CONTAINER_ID`. Find CONTAINER_ID
-with `docker ps -a`.
+`docker start CONTAINER_ID` and `docker attach CONTAINER_ID`. Find
+`CONTAINER_ID` with `docker ps -a`.
 
 You can detach from the container and leave it running with CTRL-p CTRL-q.
 
@@ -142,13 +142,13 @@ Didn't work out:
 ~~Start the first instance of BigchainDB (a container). E.g. as a daemon running in background: (https://linuxconfig.org/how-to-start-a-docker-container-as-daemon-process)~~
 
 ```
-$ docker run --net bigchaindb-network --ip 172.18.0.20 --name bigchaindb-coordinator -p 39984:9984 -d bigchaindb-dev-node /bin/sh -c "while true; do date; sleep 5; done"
+~~$ docker run --net bigchaindb-network --ip 172.18.0.20 --name bigchaindb-coordinator -p 39984:9984 -d bigchaindb-dev-node /bin/sh -c "while true; do date; sleep 5; done"~~
 ```
 
 ~~Alternative: use an interactive (-it) session that you never exit:~~
 
 ```
-$ docker run --net bigchaindb-network --ip 172.18.0.20 --name bigchaindb-coordinator -p 39984:9984 -it bigchaindb-dev-node /bin/bash
+~~$ docker run --net bigchaindb-network --ip 172.18.0.20 --name bigchaindb-coordinator -p 39984:9984 -it bigchaindb-dev-node /bin/bash~~
 ```
 
 ~~Local port 39984 is bound to the node port 9984 (the default BigchainDB port).~~
@@ -156,19 +156,21 @@ $ docker run --net bigchaindb-network --ip 172.18.0.20 --name bigchaindb-coordin
 
 ------------------------------
 
+Instead, just do:
+
 ```
 $ docker run --net bigchaindb-network --ip 172.18.0.20 --name bigchaindb-coordinator -it bigchaindb-dev-node /bin/bash
 ```
 
 #### Optional: some docker commands
 
-Look at CONTAINER_ID with:
+Look at `CONTAINER_ID` with:
 
 ```
 $ docker ps
 ```
 
-Look at logs using CONTAINER_ID:
+Look at logs using `CONTAINER_ID`:
 
 ```
 $ docker logs 6acfc613c604
