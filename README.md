@@ -91,14 +91,6 @@ monit summary' > /root/start_bigchain.sh
   $ chmod +x /root/start_bigchain.sh
 ```
 
-Create script to later easily stop the bigchain network:
-
-```
-  $ echo '#!/bin/bash
-
-  $ chmod +x /root/stop_bigchain.sh
-```
-
 Save your modifications as new Docker image:
 
 ```
